@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    runs-on: codeberg-tiny-lazy
+    runs-on: codeberg-tiny
     steps:
       - name: Checkout Commit
         uses: actions/checkout@v5
