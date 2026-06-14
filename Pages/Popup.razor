@@ -1,0 +1,61 @@
+﻿@page "/popup.html"
+@using QRCodeGenerator.Components
+@using WebExtensions.Net
+@using WebExtensions.Net.Tabs
+@inject IWebExtensionsApi WebExtensions
+@inherits BasePage
+
+<div class="card">
+    <div class="qrcode">
+        <QrCode CurrentTabUrl="@_text"/>
+    </div>
+    <div class="current-url">
+        @_text[..Math.Min(50, _text.Length)]
+    </div>
+    <div class="input">
+        <div class="selection">
+            <button @onclick="@_resetText" class="@(!_isCustom ? "active" : "")">
+                Current URL
+            </button>
+            <button @onclick="() => _isCustom = true" class="@(_isCustom ? "active" : "")">
+                Custom Text
+            </button>
+        </div>
+        @if (_isCustom)
+        {
+            <div>
+                <input value="@_text" @oninput="HandleChange"/>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string _currentTabUrl = "";
+    private string _text = "";
+    private bool _isCustom = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tabs = await WebExtensions.Tabs.Query(new QueryInfo
+        {
+            Active = true,
+            CurrentWindow = true
+        });
+        _currentTabUrl = tabs?.FirstOrDefault()?.Url ?? "";
+        _text = _currentTabUrl;
+    }
+
+    private void _resetText()
+    {
+        _isCustom = false;
+        _text = _currentTabUrl;
+    }
+
+    void HandleChange(ChangeEventArgs e)
+    {
+        _text = e.Value?.ToString()!;
+        StateHasChanged();
+    }
+
+}

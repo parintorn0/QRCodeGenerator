@@ -1,0 +1,83 @@
+* {
+    color: var(--color-primary-400);
+}
+
+body {
+    all: unset;
+    margin: 0;
+    background-color: var(--color-surface-100);
+    width: 250px;
+    height: 400px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.card {
+    border-radius: 15px;
+    height: 370px;
+    width: 250px;
+    background-color: var(--color-surface-200);
+    padding-top : 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    width: 70px;
+    height: 40px;
+    background: none;
+    border-radius: 10px;
+    border: none;
+    color: var(--color-primary-400);
+}
+
+.current-url {
+    margin-top: 10px;
+    width: 200px;
+    font-size: 13px;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+button.active {
+    color: var(--color-surface-100);
+    background: var(--color-primary-500);
+}
+
+button:not(.active):hover {
+    background: var(--color-primary-500);
+    filter: brightness(0.4);
+    color: var(--color-surface-100);
+}
+
+div:not(.qrcode) {
+    margin-bottom: 10px;
+}
+
+input {
+    background-color: var(--color-surface-300);
+    border-radius: 15px;
+    padding: 10px;
+    color: #fff;
+    border: none;
+}
+
+.input {
+    position: fixed;
+    width: 250px;
+    top: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}

@@ -1,0 +1,18 @@
+@using QRCodeGenerator.Services
+@using QRCoder
+@inject BlobService Blob
+
+<img src="@_qrUrl" alt="@CurrentTabUrl" width="150" height="150"/>
+
+@code {
+    private string? _qrUrl;
+    [Parameter] public string CurrentTabUrl { get; set; } = string.Empty;
+
+    protected override void OnParametersSet()
+    {
+        using var qrCodeData = QRCodeGenerator.GenerateQrCode(CurrentTabUrl, QRCodeGenerator.ECCLevel.Q);
+        using var qrCode = new SvgQRCode(qrCodeData);
+        _qrUrl = Blob.SvgToDataUrl(qrCode.GetGraphic(10));
+    }
+
+}
