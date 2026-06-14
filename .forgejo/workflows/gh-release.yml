@@ -1,0 +1,33 @@
+name: New Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v5
+
+      - name: Install .NET SDK 10
+        uses: https://data.forgejo.org/actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.301'
+
+      - name: Build Extension and Zip Compression
+        run: |
+          dotnet publish -c Release
+          mkdir -p dist/release
+          zip -j dist/release/extension.zip bin/Release/net10.0/publish/browserextension/*
+
+      - name: Release
+        uses: actions/forgejo-release@v2
+        with:
+          direction: upload
+          url: https://codeberg.org
+          release-dir: dist/release
+          release-notes-file: .assets/release.txt
+          token: ${{ secrets.FORGEJO_TOKEN }}
