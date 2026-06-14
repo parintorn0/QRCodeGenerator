@@ -1,7 +1,7 @@
 <div style="display:flex; flex-direction:column; gap: 0.5em">
 
 <div style="display:flex; align-items:center; gap:1em;">
-<img src="public/logo.png" width="60" height="60" align="left">
+<img src="/wwwroot/logo.png" width="60" height="60" alt="logo"/>
 
 ### QR Code generator's extension
 
