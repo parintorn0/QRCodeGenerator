@@ -11,10 +11,10 @@
 
 [![Install](https://img.shields.io/badge/get_add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/jjfdnjvd-QRCodeGenerator/)
 
-![License](https://img.shields.io/github/license/parintorn0/QRCodeGenerator)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/parintorn0/QRCodeGenerator/gh-release.yml)
-![GitHub Release Date](https://img.shields.io/github/release-date/parintorn0/QRCodeGenerator)
-![GitHub last commit](https://img.shields.io/github/last-commit/parintorn0/QRCodeGenerator)
+[![License](https://img.shields.io/github/license/parintorn0/QRCodeGenerator)](https://github.com/parintorn0/QRCodeGenerator/blob/prod/LICENSE)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/parintorn0/QRCodeGenerator/gh-release.yml)]()
+[![GitHub Release Date](https://img.shields.io/github/release-date/parintorn0/QRCodeGenerator)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/parintorn0/QRCodeGenerator)]()
 
 </div>
 
