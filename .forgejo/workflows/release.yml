@@ -25,10 +25,12 @@ jobs:
 
       - name: Zip Compression
         run: |
-          mkdir -p dist/release
-          mv bin/Release/net10.0/publish/browserextension/* dist/release
-          cd dist/release
+          mkdir dist
+          mv bin/Release/net10.0/publish/browserextension/* dist
+          cd dist
           zip -r extension.zip .
+          mkdir release && \
+          mv extension.zip release/
 
       - name: Release
         uses: actions/forgejo-release@v2
