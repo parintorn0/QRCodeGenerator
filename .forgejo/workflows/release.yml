@@ -43,5 +43,5 @@ jobs:
           direction: upload
           url: https://codeberg.org
           release-dir: dist/release
-          release-notes-file: .assets/release.txt
+          release-notes-file: .assets/release.md
           token: ${{ secrets.FORGEJO_TOKEN }}
