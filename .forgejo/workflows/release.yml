@@ -37,9 +37,6 @@ jobs:
           mkdir release && \
           mv extension.zip release/
 
-      - name: Generate Release Notes
-        run: sh .assets/release.sh
-
       - name: Release
         uses: actions/forgejo-release@v2
         with:
@@ -47,5 +44,6 @@ jobs:
           override: true
           url: https://codeberg.org
           release-dir: dist/release
-          release-notes-file: dist/release.md
+          release-notes-file: .assets/release.md
+          sha256sum: true
           token: ${{ secrets.FORGEJO_TOKEN }}
