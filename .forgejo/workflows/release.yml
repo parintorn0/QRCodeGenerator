@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y nodejs wget zip
+          apt-get install -y apt-utils nodejs wget zip
 
       - name: Checkout Commit
         uses: actions/checkout@v5
@@ -41,7 +41,9 @@ jobs:
         uses: actions/forgejo-release@v2
         with:
           direction: upload
+          override: true
           url: https://codeberg.org
           release-dir: dist/release
           release-notes-file: .assets/release.md
+          sha256sum: true
           token: ${{ secrets.FORGEJO_TOKEN }}
