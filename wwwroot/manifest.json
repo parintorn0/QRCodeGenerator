@@ -1,6 +1,6 @@
 ﻿{
   "manifest_version": 3,
-  "name": "QRCodeGenerator Extension",
+  "name": "QR Code Generator",
   "description": "Create QR Code to sharing everywhere",
   "version": "4.0.0",
   "icons":{
@@ -33,5 +33,10 @@
       "matches": [ "<all_urls>" ]
     }
   ],
-  "permissions": ["tabs", "activeTab"]
+  "permissions": ["tabs", "activeTab"],
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "{661f6817-b474-409d-9ba6-58f7a2529bdb}"
+    }
+  }
 }
