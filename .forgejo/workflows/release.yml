@@ -18,11 +18,17 @@ jobs:
           dotnet-version: latest
           dotnet-channel: LTS
       
-      - name: Build Extension and Zip Compression
+      - name: Build Extension
+        run: dotnet publish -c Release
+        env:
+          DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+
+      - name: Zip Compression
         run: |
-          dotnet publish -c Release
           mkdir -p dist/release
-          zip -j dist/release/extension.zip bin/Release/net10.0/publish/browserextension/*
+          mv bin/Release/net10.0/publish/browserextension/* dist/release
+          cd dist/release
+          zip -j extension.zip .
 
       - name: Release
         uses: actions/forgejo-release@v2
