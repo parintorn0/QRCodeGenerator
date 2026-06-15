@@ -28,7 +28,7 @@ jobs:
           mkdir -p dist/release
           mv bin/Release/net10.0/publish/browserextension/* dist/release
           cd dist/release
-          zip -j extension.zip .
+          zip -r extension.zip .
 
       - name: Release
         uses: actions/forgejo-release@v2
