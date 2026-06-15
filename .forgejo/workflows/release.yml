@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y apt-utils nodejs wget zip
+          apt-get install -y apt-utils nodejs wget zip jq
 
       - name: Checkout Commit
         uses: actions/checkout@v5
