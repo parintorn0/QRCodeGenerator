@@ -38,10 +38,9 @@ jobs:
           mv extension.zip release/
 
       - name: Release
-        uses: actions/forgejo-release@v2
+        uses: actions/forgejo-release@v2.13.1
         with:
           direction: upload
-          override: true
           url: https://codeberg.org
           release-dir: dist/release
           release-notes-file: .assets/release.md
