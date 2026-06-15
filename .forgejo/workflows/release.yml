@@ -9,6 +9,11 @@ jobs:
   release:
     runs-on: debian13
     steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y nodejs zip
+
       - name: Checkout Commit
         uses: actions/checkout@v5
 
