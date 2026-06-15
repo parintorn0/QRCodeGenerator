@@ -1,7 +1,7 @@
 <div style="display:flex; flex-direction:column; gap: 0.5em">
 
 <div style="display:flex; align-items:center; gap:1em;">
-<img src="/wwwroot/logo.png" width="60" height="60" alt="logo"/>
+<img src="/wwwroot/icons/128.png" width="60" height="60" alt="logo"/>
 
 ### QR Code generator's extension
 
@@ -9,7 +9,7 @@
 
 <div>
 
-[![Install](https://img.shields.io/badge/get_add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/jjfdnjvd-QRCodeGenerator/)
+[![Install](https://img.shields.io/badge/get_add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/jjfdnjvd-qr-code-generator/)
 
 [![License](https://img.shields.io/github/license/parintorn0/QRCodeGenerator)](https://github.com/parintorn0/QRCodeGenerator/blob/prod/LICENSE)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/parintorn0/QRCodeGenerator/gh-release.yml)]()
